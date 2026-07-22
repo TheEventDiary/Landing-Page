@@ -1,0 +1,95 @@
+{
+  "project_name": "Event Diary Landing Page",
+  "theme": "light",
+  "archetype": "Organic Earthy & Luxury",
+  "typography": {
+    "headings": "Cormorant Garamond, serif",
+    "body": "Montserrat, sans-serif",
+    "script": "Great Vibes, cursive",
+    "weights": "Headings: 300/400 (light/regular) for elegance, Body: 300/400, Buttons: 500, Script: 400",
+    "import_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+  },
+  "colors": {
+    "background_paper": "#F8F6F0",
+    "text_charcoal": "#2C2A29",
+    "text_muted": "#5C5855",
+    "blush_pink": "#EADAD5",
+    "blush_pink_light": "#F4EBE8",
+    "gold_accent": "#C5A059",
+    "white": "#FFFFFF"
+  },
+  "visual_enhancers": {
+    "texture": "Apply a global noise texture overlay to simulate cream textured paper. Use a fixed div with pointer-events-none, mix-blend-multiply, opacity-20, and a base64 SVG noise pattern.",
+    "edges": "For the 'torn-paper' look on notes or edges, use a CSS mask-image with an SVG filter (feTurbulence) or a jagged clip-path.",
+    "polaroid": "bg-white p-3 pb-12 shadow-xl border border-black/5. Add subtle rotations (e.g., rotate-[-3deg] or rotate-[4deg]) and overlap them slightly in the hero section.",
+    "glassmorphism": "For sticky headers: backdrop-blur-xl bg-[#F8F6F0]/80 border-b border-[#2C2A29]/10.",
+    "florals": "Frame corners using delicate gold or charcoal SVG floral line-art (use lucide-react 'Leaf', 'Flower' or custom SVG paths) wrapped in absolute positioned divs."
+  },
+  "grids_and_layouts": {
+    "spacing_system": "Generous Spacing: p-8, p-12, p-24, p-32. Sections should have massive vertical breathing room (py-24 or py-32).",
+    "bento_grid": "For 'OUR SERVICES', use an asymmetrical bento grid. Make some items span 2 columns and others 1. Use gap-8.",
+    "packages_grid": "4-column grid for pricing (grid-cols-1 md:grid-cols-2 lg:grid-cols-4) with gap-6. Highlight standard/premium with blush pink backgrounds."
+  },
+  "motion": {
+    "scrolling": "MANDATORY: Implement Lenis smooth scrolling wrapper for momentum scrolling.",
+    "hero_reveal": "Kinetic Hero: Split text lines wrapped in overflow-hidden containers. Use Framer Motion or GSAP to animate y: '100%' to '0%' with stagger. Duration 1.2s, ease: 'power4.out'.",
+    "parallax": "Use Framer Motion's useScroll and useTransform for subtle Y-axis parallax on the polaroid images as the user scrolls down.",
+    "marquee": "Use react-fast-marquee for a slow, editorial ribbon. Text should be large outline text (text-8xl, text-transparent, stroke-text) in charcoal.",
+    "scroll_reveals": "Use Framer Motion 'whileInView' with viewport={{ once: true, margin: '-100px' }} to gently fade-up and drift sections into place."
+  },
+  "components": {
+    "Hero": "Full-bleed cream background with noise. Center-top H1 'EVENT DIARY' (massive serif tracking-tighter). Script tagline 'We Plan. You Enjoy' positioned organically over the H1. Subtitle 'SOCIAL MEDIA MARKETING / For Every Celebration' with gold star icons. Render 3 polaroid images overlapping asynchronously. Add a torn-paper div with handwriting 'capturing moments, creating memories'. Two CTA buttons.",
+    "Header": "Sticky, glassmorphic minimal nav. Links: Services, Packages, Events Covered, Connect. Button: BOOK NOW (pill shape, gold/charcoal).",
+    "Services": "5 blocks using line icons (lucide-react). Services: Content Creation, iPhone Photography, Social Media Management, Branding & Promotion, Influencer & Collabs.",
+    "Packages": "4 columns. EXACT TEXT REQUIRED: BASIC ₹4,999 / STANDARD ₹9,999 / PREMIUM ₹19,999 / CUSTOM. Give 'Premium' a blush pink highlight, gold accents on prices. Each has a CTA opening the contact modal.",
+    "Events_Covered": "2 columns. List event types (weddings, engagements, mehndi/haldi, birthdays, corporate, baby showers, product launches, festivals) with heart icons. Script tagline '...and every moment worth celebrating!'",
+    "Perks": "3 columns: iPhone Shots, Creative & Trendy, On Time Delivery. Minimalist icons.",
+    "Footer": "Script text 'Let's make your moments unforgettable!'. Signature 'EVENT DIARY'. Massive final CTA 'READY TO MAKE YOUR EVENT UNFORGETTABLE?'. Frame bottom edges with SVG florals.",
+    "Contact_Modal": "A Shadcn Dialog triggered by all CTAs. EXACT CONTACT INFO REQUIRED: email 'daeventdiary@gmail.com', Instagram '@the_eventdiary', call '9477657156'. Keep modal styling consistent with paper texture."
+  },
+  "image_urls": {
+    "hero_polaroid_1": {
+      "url": "https://lh3.googleusercontent.com/u/0/d/1QED6yEvPOtX7JEvrBmtwv5Lk9XsMVnnb",
+      "description": "Luxury Event decor - Use inside polaroid component"
+    },
+    "hero_polaroid_2": {
+      "url": "https://images.pexels.com/photos/33078524/pexels-photo-33078524.jpeg",
+      "description": "Haldi Ceremony - Use inside polaroid component"
+    },
+    "hero_polaroid_3": {
+      "url": "https://lh3.googleusercontent.com/u/0/d/16FonQ9OnqEXhTWjYRzR_SpYt24SynK5P",
+      "description": "Elegant Table Setup - Use inside polaroid component"
+    },
+    "general_event": {
+      "url": "https://images.pexels.com/photos/16935999/pexels-photo-16935999.jpeg",
+      "description": "Banquet Celebration - Use in services or events section"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Install necessary packages: framer-motion, @studio-freight/react-lenis, react-fast-marquee, lucide-react.",
+    "Embed Google Fonts directly in index.css (Cormorant Garamond, Montserrat, Great Vibes).",
+    "Create a reusable <Polaroid /> component taking an image URL, rotation class, and optional script text.",
+    "Implement a global noise texture using a fixed div overlay in the root layout.",
+    "Build the contact modal using standard Shadcn Dialog but heavily style it to match the warm cream/paper aesthetic. Do NOT use default Vercel/Stripe styling.",
+    "Ensure exact pricing text and exact contact emails/numbers are present and functional.",
+    "Use data-testid on all interactive elements."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like \ud83e\udd16\ud83e\udde0\ud83d\udcad\ud83d\udca1\ud83d\udd2e\ud83c\udfaf etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Create new components that match the style and conventions of existing components when needed.",
+    "Use `sonner` for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx",
+    "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing."
+  ]
+}
