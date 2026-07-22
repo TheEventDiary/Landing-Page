@@ -19,13 +19,13 @@ export const HERO_PHOTOS = [
     rotate: -6,
   },
   {
-    url: "https://images.pexels.com/photos/17057034/pexels-photo-17057034.jpeg",
-    alt: "Elegant candlelit table setting",
+    url: "https://lh3.googleusercontent.com/u/0/d/16FonQ9OnqEXhTWjYRzR_SpYt24SynK5P",
+    alt: "A well organized fashion show",
     rotate: 5,
   },
   {
-    url: "https://lh3.googleusercontent.com/u/0/d/16FonQ9OnqEXhTWjYRzR_SpYt24SynK5P",
-    alt: "A sensational fashion event",
+    url: "https://lh3.googleusercontent.com/u/0/d/1A43RbKf1xO3PcoABP7BOUaf0VYDPgZGO",
+    alt: "a beautifully decorated sitting area",
     rotate: -3,
   },
 ];
